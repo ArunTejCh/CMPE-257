@@ -22,7 +22,7 @@ def get_cleaned_data(datafile):
         df.at[i, 'CloseD'] = df.iloc[i - 4]['Close']
 
     df = df[["CloseA", "CloseB", "CloseC", "CloseD", "Close", "Next_Day"]].copy()
-    df = df.iloc[4:]
+    df = df.iloc[5:]
     return df
 
 
