@@ -6,7 +6,7 @@ import numpy as np
 
 def ann_prediction(df_train, df_test):
     # Hyper-params
-    learning_rate = 0.05
+    learning_rate = 0.035
     n_stocks = 5
     n_neurons_1 = 40
     n_neurons_2 = 20
@@ -102,7 +102,8 @@ def ann_prediction(df_train, df_test):
                 # Prediction
                 pred = net.run(out, feed_dict={X: X_test})
                 line2.set_ydata(pred)
-                plt.title('Epoch ' + str(e) + ', Batch ' + str(i))
+                # plt.title('Epoch ' + str(e) + ', Batch ' + str(i))
+                plt.title('ANN vs actual prices scaled data')
                 file_name = 'models/img/epoch_' + str(e) + '_batch_' + str(i) + '.jpg'
                 plt.savefig(file_name)
                 plt.pause(0.01)

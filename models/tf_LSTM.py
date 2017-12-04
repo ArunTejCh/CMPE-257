@@ -14,10 +14,10 @@ def ltsm_prediction():
     data_to_use = tesla_stocks['Close'].values
     epochs = 200
     batch_size = 5
-    learning_rate = 0.0005
+    learning_rate = 0.00025
     hidden_layer_size = 30
-    dropout_rate = 0.95
-    gradient_clip_margin = 100
+    dropout_rate = 0.98
+    gradient_clip_margin = 5
     window_length = 5
 
 
@@ -194,7 +194,7 @@ def ltsm_prediction():
     plt.plot(sup, label='Training data')
     plt.plot(test_results, label='Testing data')
     plt.legend()
-    plt.show()
+    # plt.show()
     plt.savefig("lstm.jpg")
     session.close()
     return tests_new_rescaled
